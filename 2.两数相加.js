@@ -2,7 +2,7 @@
  * @author: cmx
  * @Date: 2020-03-23 16:48:10
  * @LastEditors: cmx
- * @LastEditTime: 2020-03-23 17:54:50
+ * @LastEditTime: 2020-03-23 22:25:42
  * @Description: 文件描述
  * @FilePath: \leetcode\2.两数相加.js
  */
@@ -51,12 +51,15 @@
  */
 var addTwoNumbers = function(l1, l2) {
   let res = null
+  let resLast = null
   let inPos = 0
   while(l1 || l2 || inPos) {
     let curr = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + inPos
     let temp = new ListNode(curr >= 10 ? curr - 10 : curr)
     inPos = curr >= 10 ? 1 : 0
-    res ? res.next = temp : res = temp
+    resLast ? resLast.next = temp : resLast = temp
+    if(!res) res = resLast
+    if(resLast.next) resLast = resLast.next
     l1 = (l1 ? l1.next : null)
     l2 = (l2 ? l2.next : null)
   }
@@ -64,3 +67,7 @@ var addTwoNumbers = function(l1, l2) {
 };
 // @lc code=end
 
+/**思路
+ * 1. 结果应为指针head
+ * 2. 使用尾指针指向每次计算结果的最后一位
+ */

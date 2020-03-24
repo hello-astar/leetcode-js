@@ -2,7 +2,7 @@
  * @author: cmx
  * @Date: 2020-03-23 16:29:40
  * @LastEditors: cmx
- * @LastEditTime: 2020-03-23 16:41:55
+ * @LastEditTime: 2020-03-23 22:24:24
  * @Description: 文件描述
  * @FilePath: \leetcode\1.两数之和.js
  */
@@ -30,3 +30,8 @@ var twoSum = function(nums, target) {
 };
 // @lc code=end
 
+/**思路
+ * 1. 使用一个对象存储nums[i]的预期partner和i的对应关系，一旦找到nums[i]的预期partner，i也就知道了
+ * 2. 先到先得，故存储时判断该值是否已经存在，若存在，不覆盖
+ * 3. 自己和自己不能作为答案
+ */
