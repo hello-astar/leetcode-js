@@ -2,7 +2,7 @@
  * @author: cmx
  * @Date: 2020-03-26 11:14:17
  * @LastEditors: cmx
- * @LastEditTime: 2020-03-26 17:33:00
+ * @LastEditTime: 2020-03-27 11:18:08
  * @Description: 文件描述
  * @FilePath: \leetcode\14.最长公共前缀.js
  */
@@ -50,10 +50,11 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
+  if(!strs || !strs.length) return ''
   let commonStr = ''
   let i = 0
   let flag = 0
-  while(1 && strs.length) {
+  while(1) {
     if(i > strs[0].length - 1) break
     const t = strs[0][i]
     commonStr += t
@@ -71,5 +72,15 @@ var longestCommonPrefix = function(strs) {
   }
   return commonStr
 };
+
+var longestCommonPrefix = function(strs) {
+  if(!strs || !strs.length) return ''
+  return strs.reduce((pre, next) => {
+    let i = 0
+    while(pre[i] && next[i] && pre[i] === next[i]) i++
+    return pre.slice(0, i)
+  })
+}
+
 // @lc code=end
 
