@@ -1,11 +1,4 @@
-/*
- * @author: cmx
- * @Date: 2020-03-26 11:14:17
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-27 11:18:08
- * @Description: 文件描述
- * @FilePath: \leetcode\14.最长公共前缀.js
- */
+
 /*
  * @lc app=leetcode.cn id=14 lang=javascript
  *

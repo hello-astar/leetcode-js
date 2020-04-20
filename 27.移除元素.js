@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-27 16:28:16
- * @LastEditors: cmx
- * @LastEditTime: 2020-04-20 15:15:05
- * @Description: 文件描述
- * @FilePath: \leetcode\27.移除元素.js
- */
-/*
  * @lc app=leetcode.cn id=27 lang=javascript
  *
  * [27] 移除元素

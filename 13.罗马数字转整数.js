@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-26 11:12:35
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-26 14:19:00
- * @Description: 文件描述
- * @FilePath: \leetcode\13.罗马数字转整数.js
- */
-/*
  * @lc app=leetcode.cn id=13 lang=javascript
  *
  * [13] 罗马数字转整数

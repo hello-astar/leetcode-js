@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-26 10:58:30
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-26 11:12:14
- * @Description: 文件描述
- * @FilePath: \leetcode\9.回文数.js
- */
-/*
  * @lc app=leetcode.cn id=9 lang=javascript
  *
  * [9] 回文数

@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-25 14:51:51
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-26 10:53:53
- * @Description: 文件描述
- * @FilePath: \leetcode\7.整数反转.js
- */
-/*
  * @lc app=leetcode.cn id=7 lang=javascript
  *
  * [7] 整数反转

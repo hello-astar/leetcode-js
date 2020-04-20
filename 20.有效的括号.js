@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-27 11:19:13
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-27 11:40:03
- * @Description: 文件描述
- * @FilePath: \leetcode\20.有效的括号.js
- */
-/*
  * @lc app=leetcode.cn id=20 lang=javascript
  *
  * [20] 有效的括号

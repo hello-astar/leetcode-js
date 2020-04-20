@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-23 16:48:10
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-23 22:25:42
- * @Description: 文件描述
- * @FilePath: \leetcode\2.两数相加.js
- */
-/*
  * @lc app=leetcode.cn id=2 lang=javascript
  *
  * [2] 两数相加
