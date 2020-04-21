@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-24 10:28:20
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-24 18:00:31
- * @Description: 文件描述
- * @FilePath: \leetcode\3.无重复字符的最长子串.js
- */
-/*
  * @lc app=leetcode.cn id=3 lang=javascript
  *
  * [3] 无重复字符的最长子串

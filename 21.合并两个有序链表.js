@@ -1,12 +1,4 @@
 /*
- * @author: cmx
- * @Date: 2020-03-27 11:40:10
- * @LastEditors: cmx
- * @LastEditTime: 2020-03-27 15:30:24
- * @Description: 文件描述
- * @FilePath: \leetcode\21.合并两个有序链表.js
- */
-/*
  * @lc app=leetcode.cn id=21 lang=javascript
  *
  * [21] 合并两个有序链表
