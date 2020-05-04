@@ -73,7 +73,7 @@ var getNext = function(str) {
       ++j
       if(str[j] !== str[k]) {
         next[j] = k
-      } else { // 优化
+      } else { // 优化,本来就是因为不相等才寻找next，优化前若str[j] = str[k],则(needle[k] == needle[next[k]]) != haystack[j]，优化后直接让k = next[next[k]],减少一次没用的递归
         next[j] = next[k]
       }
     } else {
