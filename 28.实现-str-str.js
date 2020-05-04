@@ -44,8 +44,6 @@
  * @param {string} needle
  * @return {number}
  */
-
- // 使用kmp算法解答
 var strStr = function(haystack, needle) {
   let next = getNext(needle)
   let lenn = needle.length
@@ -66,20 +64,22 @@ var strStr = function(haystack, needle) {
   return -1
 };
 var getNext = function(str) {
-  let len = str.length
   let next = [-1]
   let k = -1
   let j = 0
-  while(j < len - 1) {
-    if(k === -1 || str[j] === str[k]) {
+  while(j < str.length - 1) {
+    if(k === -1 || str[k] === str[j]) {
       ++k
       ++j
-      next[j] = k
+      if(str[j] !== str[k]) {
+        next[j] = k
+      } else { // 优化
+        next[j] = next[k]
+      }
     } else {
       k = next[k]
     }
   }
-  console.log(next)
   return next
 }
 // @lc code=end
