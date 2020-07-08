@@ -2,7 +2,7 @@
  * @author: cmx
  * @Date: 2020-07-08 15:33:56
  * @LastEditors: cmx
- * @LastEditTime: 2020-07-08 16:28:47
+ * @LastEditTime: 2020-07-08 16:54:31
  * @Description: 文件描述
  * @FilePath: \leetcode\88.合并两个有序数组.js
  */ 
@@ -53,18 +53,11 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function(nums1, m, nums2, n) {
-  while(n--) {
-    let insert = nums2.shift()
-    let i
-    for (i = m-1; i >= 0; i--) {
-      if (nums1[i] > insert) {
-        nums1[i+1] = nums1[i]
-      } else {
-        break
-      }
-    }
-    nums1[i+1] = insert
-    m++
+  let insertPos = m + n - 1
+  m--
+  n--
+  while(n>=0) {
+    nums1[insertPos--] = nums1[m] > nums2[n] ? nums1[m--] : nums2[n--]
   }
   return nums1
 };
