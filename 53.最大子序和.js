@@ -44,34 +44,36 @@
 //   return max
 // };
 
-// 分治法
-var maxSubArray = function(nums) {
-  return getMax(0, nums.length - 1, nums)[2]
-}
-var getMax = function(l, r, nums) {
-  if (l === r) {
-    return [l, r, nums[l]]
-  }
-  let mid = l + Math.floor((r - l) / 2)
-  // console.log(mid)
-
-  let [ll, lr, lmax] = getMax(l, mid, nums)
-  let [rl, rr, rmax] = getMax(mid + 1, r, nums)
-  // console.log(lmax, rmax)
-  if (lr + 1 === rl) {
-    return lmax + rmax >= lmax && lmax + rmax >= rmax ? [ll, rr, lmax + rmax] : (lmax > rmax ? [ll, lr, lmax] : [rl, rr, rmax])
-  }
-  let [ml, mr, mmax] = getMax(lr + 1, rl - 1, nums)
-  // 比较大小
-  return max([ll, lr, lmax], [rl, rr, rmax], [ml, mr, mmax])
-}
-var max = function(a, b, c) {
-  if (a[2] >= b[2]) {
-    return a[2] > c[2] ? a : c
-  } else {
-    return b[2] > c[2] ? b : c
-  }
-}
+// // 分治法
+// var maxSubArray = function(nums) {
+//   return getMax(0, nums.length - 1, nums)
+// }
+// var getMax = function(l, r, nums) {
+//   if (l === r) {
+//     return nums[l]
+//   }
+//   let mid = l + Math.floor((r - l) / 2)
+//   let lmax = getMax(l, mid, nums)
+//   let rmax = getMax(mid + 1, r, nums)
+//   let leftBorderSum = nums[mid]
+//   let rightBorderSum = nums[mid + 1]
+//   let maxLeftBorderSum = nums[mid]
+//   let maxRightBorderSum = nums[mid + 1]
+//   // 计算中间部分, 中间部分必须包含mid
+//   for(let i = mid - 1; i >= l; i--) {
+//     leftBorderSum+= nums[i]
+//     maxLeftBorderSum = maxLeftBorderSum > leftBorderSum ? maxLeftBorderSum: leftBorderSum
+//   }
+//   for(let i = mid + 2; i <= r; i++) {
+//     rightBorderSum+=nums[i]
+//     maxRightBorderSum = maxRightBorderSum > rightBorderSum ? maxRightBorderSum: rightBorderSum
+//   }
+//   // 比较大小
+//   return max(lmax, rmax, maxLeftBorderSum + maxRightBorderSum)
+// }
+// var max = function(a, b, c) {
+//   return a > b ? (a > c ? a : c) : (b > c ? b : c)
+// }
 
 // @lc code=end
 
