@@ -36,17 +36,21 @@
  * @param {number[][]} grid
  * @return {number}
  */
+// 局部最优解，非全局最优解
 var minPathSum = function(grid) {
-  return getMinPath(0, 0, grid)
+  let map = {}
+  return getMinPath(0, 0, grid, map)
 };
-var getMinPath = function(m, n, grid) {
-  if(m === grid.length - 1 && n === grid[0].length - 1) return grid[m][n]
+var getMinPath = function(m, n, grid, map) {
+  console.log(map)
+  if(map.hasOwnProperty(m+''+n)) return map[m+''+n]
+  if(m === grid.length - 1 && n === grid[0].length - 1) return map[m+''+n] = grid[m][n]
   let item = grid[m][n]
-  if(n + 1 > grid[0].length - 1) return item + getMinPath(m+1, n, grid)
-  if(m + 1 > grid.length - 1) return item + getMinPath(m, n+1, grid)
-  let a = getMinPath(m, n+1, grid)
-  let b = getMinPath(m+1, n, grid)
-  return a < b ? item + a : item + b
+  if(n + 1 > grid[0].length - 1) return map[m + '' + n] = item + (map.hasOwnProperty(m+'1'+n) ? map[m+'1'+n] : getMinPath(m+1, n, grid, map))
+  if(m + 1 > grid.length - 1) return map[m + '' + n] = item + (map.hasOwnProperty(m+''+(n + 1)) ? map[m+''+(n + 1)] : getMinPath(m, n+1, grid, map))
+  let a = getMinPath(m, n+1, grid, map)
+  let b = getMinPath(m+1, n, grid, map)
+  return map[m + '' + n] = a < b ? item + a : item + b
 }
 // @lc code=end
 
